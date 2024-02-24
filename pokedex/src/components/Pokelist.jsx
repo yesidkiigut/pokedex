@@ -30,7 +30,21 @@ export function Pokelist() {
                 <div className="pokemon-container">
                     <div className="all-container">
                         {allPokemons.map((pokemonStats)=>(
-                            <PokemonCard/>
+                            <PokemonCard
+                            key={pokemonStats.id}
+                            id={pokemonStats.id.toString().padStart(3,"0")}
+                            name={pokemonStats.name.replace(/^./, (str) => str.toUpperCase())}
+                            image={pokemonStats.sprites.other["official-artwork"].front_default}
+                            type={pokemonStats.types[0].type.name}
+                            weight={pokemonStats.weight}
+                            height={pokemonStats.height}
+                            stats={pokemonStats.stats
+                                .map((stat) => stat.base_stat)
+                                .slice(0, 3)}
+                                statsName={pokemonStats.stats
+                                    .map((stat) => stat.stat.name)
+                                    .slice(0, 3)}
+                            />
                         ))}
                     </div>
                 </div>
