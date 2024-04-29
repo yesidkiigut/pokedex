@@ -1,15 +1,18 @@
 import "./PokemonCard.css";
 import pokeball from "../img/pokeball.png";
 import { useState } from "react";
-export function PokemonCard({id,
-    name,
-    image,
-    type,
-    height,
-    weight,
-    stats,
-    statsName,}) {
-    const [isShown, setIsShown] = useState(false);
+export function PokemonCard({
+  id,
+  name,
+  image,
+  type,
+  height,
+  weight,
+  stats,
+  statsName,
+}) {
+  const [isShown, setIsShown] = useState(false);
+
   return (
     <div className="container">
       {isShown && (
@@ -24,9 +27,9 @@ export function PokemonCard({id,
               className="stats-left"
               style={{ background: "#dbdbd9", textAlign: "center" }}
             >
-              <p>Type</p>
-              <p>Height</p>
-              <p>Weight</p>
+              <p>Tipo</p>
+              <p>Altura</p>
+              <p>Peso</p>
             </div>
             <div className="stats-right" style={{ background: "#ffffff" }}>
               <p>{type}</p>
@@ -68,5 +71,5 @@ export function PokemonCard({id,
         />
       </div>
     </div>
-  )
+  );
 }

@@ -7,7 +7,7 @@ export function TopBar() {
  return(
     <div className="title">
     <div className="title__left">
-      <p>Pokédex</p>
+      <p>💻 Mi Pokédex 💻</p>
       <div className="caught-seen">
         <div className="caught">
           <img
